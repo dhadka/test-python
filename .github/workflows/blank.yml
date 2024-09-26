@@ -28,7 +28,7 @@ jobs:
       # Runs a single command using the runners shell
       - name: Run a one-line script
         run: |
-          echo "[externally-managed]" >> /usr/lib/python3.10/EXTERNALLY-MANAGED
-          echo "Error=Foo" >> /usr/lib/python3.10/EXTERNALLY-MANAGED
+          sudo echo "[externally-managed]" >> /usr/lib/python3.10/EXTERNALLY-MANAGED
+          sudo echo "Error=Foo" >> /usr/lib/python3.10/EXTERNALLY-MANAGED
           pip install virtualenv
 
