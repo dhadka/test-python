@@ -25,10 +25,9 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v4
 
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: |
-          sudo echo "[externally-managed]" >> /usr/lib/python3.10/EXTERNALLY-MANAGED
-          sudo echo "Error=Foo" >> /usr/lib/python3.10/EXTERNALLY-MANAGED
-          pip install virtualenv
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+          cache: 'false'
 
