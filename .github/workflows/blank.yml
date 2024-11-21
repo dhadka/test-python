@@ -28,13 +28,13 @@ jobs:
       - shell: bash
         run: |
           echo "echo hello" > test.bat
+          echo "$(pwd)" >> $GITHUB_PATH
       - shell: cmd
         run: |
           test.bat
           test
       - shell: bash
         run: |
-          PATH=$(pwd):$PATH
           test
         
 
