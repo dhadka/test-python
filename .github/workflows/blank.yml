@@ -36,6 +36,7 @@ jobs:
           test
       - shell: bash
         run: |
-          test
+          echo $PATH
+          test.bat
         
 
