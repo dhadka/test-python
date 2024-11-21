@@ -28,6 +28,7 @@ jobs:
       - shell: bash
         run: |
           echo "echo hello" > test.bat
+          chmod u+x test.bat
           echo "$(pwd)" >> $GITHUB_PATH
       - shell: cmd
         run: |
