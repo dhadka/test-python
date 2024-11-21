@@ -28,11 +28,12 @@ jobs:
       - shell: bash
         run: |
           echo "echo hello" > test.bat
-          test.bat
-          test
       - shell: cmd
         run: |
           test.bat
+          test
+      - shell: bash
+        run: |
           test
         
 
