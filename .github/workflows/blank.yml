@@ -35,7 +35,6 @@ jobs:
           test.bat
           test
       - run: |
-          test.bat
           test
       - shell: bash
         run: |
