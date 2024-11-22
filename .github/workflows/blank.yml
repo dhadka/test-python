@@ -34,6 +34,9 @@ jobs:
         run: |
           test.bat
           test
+      - run: |
+          test.bat
+          test
       - shell: bash
         run: |
           echo $PATH
