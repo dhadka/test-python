@@ -36,9 +36,10 @@ jobs:
           test
       - run: |
           test
+          ./test
       - shell: bash
         run: |
           echo $PATH
           test.bat
-        
+          ./test.bat
 
