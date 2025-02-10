@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  checks: write
+  actions: write  # Required to trigger workflow_dispatch
   contents: write
   pull-requests: write
 
