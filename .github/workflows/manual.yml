@@ -37,8 +37,11 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           pull-request-number: ${{ steps.cpr.outputs.pull-request-number }}
+      - name: Echo
+        run: |
+          echo "${{ steps.cpr.outputs.pull-request-branch }}"
       - name: Trigger CI for Pull Request
         run: |
-          gh workflow run ci.yml --ref "${{ steps.cpr.outputs.pull-request-branch }}"
+          gh workflow run ci.yml --ref "automatic_pull_${{ steps.date.outputs.date }}_${{ github.event.number }}"
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
