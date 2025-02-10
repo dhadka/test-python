@@ -37,9 +37,6 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           pull-request-number: ${{ steps.cpr.outputs.pull-request-number }}
       - name: Trigger CI for Pull Request
-        uses: peter-evans/repository-dispatch@v3
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          repository: dhadka/test-python
-          event-type: auto-config-pull
-          client-payload: '{"ref": "refs/pull/${{ steps.cpr.outputs.pull-request-number }}/head", "sha": "${{ steps.cpr.outputs.pull-request-head-sha }}"}'
+        run: |
+          gh workflow run ci.yml --ref "${{ steps.cpr.outputs.pull-request-branch }}"
+          
