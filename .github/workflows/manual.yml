@@ -41,4 +41,4 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           event-type: auto-config-pull
-          client-payload: '{"ref": "refs/pull/${{ steps.cpr.outputs.pull-request-number }}/head", "sha": "${{ steps.cpr.outputs.pull-request-head-sha }}"}'
+          client-payload: '{"ref": "refs/pull/${{ steps.cpr.outputs.pull-request-number }}/merge"}'
